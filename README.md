@@ -1,4 +1,5 @@
 # Airline-Management-System
+The Airline Management System is a microservice-based application that facilitates efficient airline operations.
 # Table-of-Contents
 Project Overview
 Features
@@ -70,19 +71,43 @@ The application will run on http://localhost:3000/.
 Log in as an admin to manage flight schedules, passengers, and reports.
 # User-Features:
 
-# Search-for-flights-and-book-tickets.
-View booking details and cancel tickets if needed.
+# AirTicketBookingService
+Description
+This service handles ticket booking and cancellation operations. It integrates with the FlightsAndSearchService to retrieve flight details and ensures proper ticket allotment based on availability.
 
-Create a new branch:
-bash
-Copy code
-git checkout -b feature-name  
-Make your changes and commit them:
+# Features
+Book tickets for a selected flight.
+Cancel tickets and process refunds.
+Generate and manage booking records.
+Integration with payment processing systems (optional).
+# APIs
+POST /bookTicket: Book a ticket for a specific flight.
+DELETE /cancelTicket/{ticketId}: Cancel an existing ticket.
+GET /bookingDetails/{userId}: Fetch all bookings for a specific user.
 
-Copy code
-git commit -m "Add your message here"  
-Push the changes:
-bash
-Copy code
-git push origin feature-name  
-Create a pull request.
+# Auth_Service
+Description
+The authentication service manages secure user login, registration, and role-based access for the application.
+
+# Features
+User registration and login.
+JWT-based token generation for secure communication.
+Role management (Admin, User).
+# APIs
+POST /register: Register a new user.
+POST /login: Authenticate a user and issue a token.
+GET /validateToken: Validate a user's token and retrieve user details.
+# FlightsAndSearchService
+Description
+This service handles flight data and search functionalities, providing the necessary information for booking and management.
+
+# Features
+Add, update, and delete flight schedules (Admin only).
+Search for flights based on source, destination, and date.
+Retrieve flight details by ID.
+# APIs
+POST /addFlight: Add a new flight schedule.
+PUT /updateFlight/{flightId}: Update flight details.
+DELETE /deleteFlight/{flightId}: Delete a flight.
+GET /searchFlights: Search flights by source, destination, and date.
+GET /flightDetails/{flightId}: Fetch details of a specific flight.
