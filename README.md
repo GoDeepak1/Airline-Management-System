@@ -86,8 +86,3 @@ bash
 Copy code
 git push origin feature-name  
 Create a pull request.
-License
-This project is licensed under the MIT License. Feel free to use and modify the code as needed.
-
-Acknowledgments
-Special thanks to all contributors and developers who made this project possible.
